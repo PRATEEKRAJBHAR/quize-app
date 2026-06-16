@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .certificate-container {
+    text-align: center;
+    border: 5px solid gold;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.certificate-container h1 {
+    font-size: 28px;
+    color: #d4af37; /* Gold color */
+}
+
+.certificate-container h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.certificate-container p {
+    font-size: 18px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+#quiz-score {
+    
+    font-weight: bold; /* Make it bold */
+    color: #ff5733;    /* Change text color (orange-red) */
+    background-color: #ffff99; /* Light yellow background */
+    
+}
+
+    </style>
+</head>
+<body>
+    <div class="certificate-container">
+        <h1>Certificate Of Achievement</h1>
+        <p>This is to certify that</p>
+        <h2 id="category"></h2>
+        <h2 id="level"></h2>
+        <p>has successfully completed the quiz</p>
+        <h3 id="quiz-title"></h3>
+        <p>with a score of <span id="quiz-score"></span> %</p>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </div>
+</body>
+<script>
+    let existing_quiz = JSON.parse(localStorage.getItem("quiz_name")) || [];
+    existing_quiz.forEach((ele)=>{
+        document.getElementById("category").innerText=`Category:${ele.selecte}`;
+        document.getElementById("level").innerText=`Level:${ele.type}`;
+        document.getElementById("quiz-title").innerText=`${ele.create_quiz}`;
+
+
+    })
+    
+    // let score=localStorage.setItem("quiz_score", score);
+    let percentage=JSON.parse(localStorage.getItem("quiz-percentage"))||[]
+    console.log(percentage);
+    document.getElementById("quiz-score").innerText=`${percentage}`
+
+
+    // download certificate
+    // function downloadCertificate() {
+    //     const { jsPDF } = window.jspdf; 
+    //     let certificate = document.querySelector(".certificate-container");
+
+    //     html2canvas(certificate).then(canvas => {
+    //         let imgData = canvas.toDataURL("image/png"); // Convert to image
+    //         let pdf = new jsPDF("p", "mm", "a4"); // Create PDF
+
+    //         let imgWidth = 210; // A4 width in mm
+    //         let imgHeight = (canvas.height * imgWidth) / canvas.width; // Scale height
+    //         pdf.addImage(imgData, "PNG", 0, 10, imgWidth, imgHeight);
+            
+    //         pdf.save("Certificate.pdf"); // Download PDF
+    //     });
+    // }
+
+
+</script>
+<!-- download certificate -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+
+</html>

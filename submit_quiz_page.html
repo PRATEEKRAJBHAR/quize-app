@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Submission</title>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f8f9fa;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+h2 {
+    color: #4A47A3;
+}
+
+p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.view-score {
+    /* padding-left: 10px; */
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.view-score:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.submit-again {
+    display: block;
+    margin-top: 10px;
+    color: #4A47A3;
+    text-decoration: none;
+}
+
+.submit-again:hover {
+    text-decoration: underline;
+}
+
+   </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2  id="quiz-name">Thank You!</h2>
+        <p>Your response has been recorded.</p>
+        
+        <a href="result.html"><button class="view-score">View score</button></a>
+        <a href="solve_quiz.html" class="submit-again">Submit Another Response</a>
+    </div>
+
+</body>
+<script src="solve_quiz.js"></script>
+</html>

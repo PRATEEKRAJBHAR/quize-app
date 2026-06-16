@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+    background-color: #f4f4f4; /* Light gray background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    background-color: #ffcc00; /* Yellow background */
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 60%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Highlight important parts */
+h3:nth-child(odd) {
+    background-color: #28a745; /* Green background */
+}
+
+h3:nth-child(even) {
+    background-color: #ff5733; /* Orange background */
+}
+/* Style the radio button */
+input[type="checkbox"] {
+    transform: scale(1.5); /* Make it bigger */
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Style the Start button */
+button {
+    background-color: #28a745; /* Green background */
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: #218838; /* Darker green */
+    transform: scale(1.05);
+}
+
+/* Center the button and radio */
+div {
+    text-align: center;
+    margin-top: 20px;
+}
+.condition{
+    display: flex;
+    flex-direction: row;
+    background-color: burlywood;
+    margin: 30px;
+    padding: 20px;
+    
+}
+label{
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+    </style>
+</head>
+<body>
+    <h1>jai shree ram</h1>
+    <div class="container">
+        
+    <h3>📢 Read each question carefully before answering.</h3>
+    <h3>📄 All question is MSQ questions </h3>
+    <h3>✅ Each question carries specific marks 
+    </h3>
+    <h3>⏳ Time is limited! Once the quiz starts, the timer will run continuously.
+    </h3>
+    <h3>📄 If you can not submit form befor the time then your form is autosubmit</h3>
+    <h3>❌ No negative marking for wrong answers 
+    </h3>
+    <h3>🚀 You can go back to a previous question 
+    </h3>
+    <h3>📄If You want to leave the exam then you clicked cancle button </h3>
+    <h3>📄 Submit the quiz before the timer runs out to save your answers.
+    </h3>
+    <h3>📊 Your score will be displayed after submission.
+    </h3>
+    <h3>📄After submitted you are provide certificate</h3>
+    <div class="condition">
+        <label>Are you agree</label>
+    <input type="checkbox" id="agree">
+    <button onclick="startQuiz()">Start</button>
+
+    </div>
+    </div>
+</body>
+<script>
+    function startQuiz() {
+        let radioBtn = document.getElementById("agree");
+
+        if (radioBtn.checked) {
+            window.location.href = "solve_quiz.html"; 
+        } else {
+            alert("⚠ Please read and agree to the instructions before starting the quiz.");
+        }
+    }
+</script>
+</html>

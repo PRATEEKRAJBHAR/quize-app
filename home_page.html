@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+       .container { 
+   
+    border: 1px solid blueviolet;
+    margin-top: 30px; /* Reduce top margin */
+    width: 95%; /* Make the table smaller */
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    word-wrap: break-word;   /* Ensures words wrap */
+    white-space: normal;     /* Allows text to wrap */
+    overflow-wrap: break-word; /* Helps break long words */
+    max-width: 200px; /* Adjust as needed to control cell width */
+}
+
+th {
+    background-color: #4A47A3;
+    color: white;
+    /* font-weight: bold; */
+}
+ /* #quiz-create{
+    
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-decoration: none;
+   width: 20%;
+   position: relative;
+   left: 490px;
+   margin-left: 100px;
+   
+} */
+
+/* #home{
+    padding-left: 10px;
+    height: 30px;
+    width: 150px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 1s;
+    margin-top: 20px;
+    margin-left: 80px;
+    font-weight: bold;
+  
+}
+#home:hover{
+    background-color: #ccc;
+    cursor: pointer;
+   
+} */
+
+#home {
+    /* padding-left: 10px; */
+    height: 42px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#home:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+h1{
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4A47A3;
+    margin-top: 100px;
+}
+h3{
+    /* border: 1px solid blue; */
+    margin-left: 75px;
+}
+
+td, th {
+    /* border: 1px solid blue; */
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    padding: 10px;
+}
+.delete-btn{
+    /* border: 1px solid blue; */
+    background-color: red;
+}
+
+/* General Button Styling */
+.edit-btn, .delete-btn, .start-link {
+    width: 65px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+     transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+   
+}
+
+/* Edit Button (Blue) */
+.edit-btn {
+    /* border: 10px solid blue; */
+    background: #007bff;
+    color: white;
+
+}
+
+.edit-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Delete Button (Red) */
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #b02a37;
+    transform: translateY(-2px);
+}
+
+/* Start Button (Green) */
+.start-link {
+    background: #28a745;
+    color: white;
+}
+
+.start-link:hover {
+    background: #1e7e34;
+    transform: translateY(-2px);
+}
+
+/* Active Click Effect */
+.edit-btn:active, .delete-btn:active, .start-link:active {
+    transform: scale(0.98);
+}
+
+/* Remove button default styles inside <a> */
+a {
+    text-decoration: none;
+}
+
+/* Flexbox Layout for Buttons (if needed) */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; 
+    
+}
+/* #tablebody{
+    background-color: ;
+} */
+
+.filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-top: 60px;
+        }
+
+        select, .filter-btn {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #4A47A3;
+            font-size: 14px;
+        }
+
+        .filter-btn {
+            background-color: #4A47A3;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover {
+            background-color: #6A5ACD;
+        }
+        
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 60px; /* Space for the fixed navbar */
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #4CAF50, #2196F3); /* Gradient background */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+.navbar h1 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar button {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.navbar a + a {
+    margin-left: 20px; /* Adds space between the buttons */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a + a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .navbar button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+   
+     <!-- <a id="quiz-create" href="create_quiz.html"><button>Create Quiz</button></a> -->
+    <div class="navbar">
+        <a id="quiz-create" href="create_quiz.html">
+            <button id="home" onclick="saveSelectedQuiz('Chapter 1')">Create Quiz</button>
+        </a>
+        <a id="quiz-create" href="category.html">
+            <button id="home" onclick="saveSelectedQuiz('Chapter 1')">CATEGORY PAGE</button>
+        </a>
+       
+    </div>
+    <!-- Filter Section -->
+    <h1>Quiz App</h1>
+    <div class="filter-container">
+       
+        <select id="categoryFilter">
+            <option value="">Select Category</option>
+        </select>
+
+        <select id="hardnessFilter">
+            <option value="">Select Hardness Level</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+
+        <button class="filter-btn" onclick="applyFilter()">Apply Filter</button>
+        <button class="filter-btn" onclick="clearFilter()">Clear Filter</button>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Quiz Name</th>
+                    <th>Hardness Level</th>
+                    <th>Category</th>
+                    <th>Total Question</th>
+                    <th>Weightage</th>
+                    <th>Time(Minutes)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="home_page.js"></script>
+</html>
+

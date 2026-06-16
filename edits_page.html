@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+
+
+        
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#questionContainer {
+    margin-top: 30px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.background {
+    margin-left: 80px;
+}
+
+
+#result-details {
+    background: linear-gradient(135deg, #6A5ACD, #483D8B);
+    padding: 50px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+/* .homepage {
+    padding-left: 10px;
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+} */
+
+/* .homepage:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+} */
+
+
+h1 {
+    color: #4A47A3;
+    /* font-size: 30px; */
+    /* margin-left: 65px; */
+    font-weight: bold;
+/* border: 1px solid red; */
+margin-top: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+    
+}
+
+.titles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.delete-btn{
+    background-color: red;
+}
+
+
+#quizTitle{
+    /* border: 5px solid gold; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+/* General Button Styling */
+.delete-btn, .edits-btn,.edit-btn, .add-btn {
+    height: 40px;
+    width: 150px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    margin: 10px 15px;
+    margin-right: 50px;
+}
+
+
+.delete-btn {
+    background: #e63946;
+    color: white;
+   /* position: relative;
+   top: 10px; */
+}
+
+.delete-btn:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.delete-btn:active {
+    transform: scale(0.95);
+}
+
+
+.edits-btn {
+    background: #007bff;
+    color: white;
+    position: relative;
+   bottom: 10px;
+   /* border: 5px solid black; */
+}
+
+.edits-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.edits-btn:active {
+    transform: scale(0.95);
+}
+
+
+.edit-btn {
+    /* border: 5px solid blue; */
+    background: #007bff;
+    color: white;
+    position: relative;
+   top: 10px;
+   
+}
+
+.edit-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.edit-btn:active {
+    transform: scale(0.95);
+}
+
+
+.add-btn {
+    background: #28a745;
+    color: white;
+}
+
+.add-btn:hover {
+    background: #1e7e34;
+    transform: translateY(-2px);
+}
+
+.add-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* Form Container */
+form {
+    margin-top: 30px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields */
+/* Form Container */
+form {
+    margin-top: 30px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General Input Styling */
+.inputs {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.inputs{
+    border: 2px solid #ddd;
+      border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Hover & Focus Effects */
+.inputs:hover {
+    background-color: #f1f1f1;
+}
+
+.inputs:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+
+.second, .third {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+#question-text, #c, #a, #b, #d, #e, #f, #g, #h {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 5px;
+    display: block;
+}
+#i{
+    font-weight: bold;
+}
+
+#d:hover, #e:hover, #f:hover, #g:hover, #h:hover {
+    background-color: #f1f1f1;
+}
+
+#d:focus, #e:focus, #f:focus, #g:focus, #h:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.goto-questions{
+    border: 11px solid red;
+    height: 20px;
+}
+/* General Input Styling */
+#forms {
+
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid blue; */
+}
+
+/* Hover & Focus Effects */
+#forms:hover {
+    background-color: #f1f1f1;
+}
+
+#forms:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.first {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+ #a, #b,#m {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    left: 0;
+    top: 15px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+
+#a:hover, #b:hover ,#m:hover{
+    background-color: #f1f1f1;
+}
+
+#a:focus, #b:focus ,#m:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+#option-7{
+    /* border: 1px solid blue; */
+    height: 40px;
+}
+#option-8{
+    /* border: 1px solid blue; */
+    height: 40px;
+}
+#btns {
+    padding-left: 10px;
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 70px;
+ 
+}
+
+#btns:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+#btn {
+    padding-left: 10px;
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 70px;
+ 
+}
+
+#btn:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+#update-btn {
+    padding-left: 10px;
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+     margin-left: 70px;
+ 
+}
+
+#update-btn:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.filter {
+    display: flex;
+    justify-content: flex-end;
+  
+    margin-top: 20px;
+    margin-left: 50px;
+}
+#apply {
+    padding-left: 10px;
+    height: 42px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 70px;
+    margin-right: 70px;
+ 
+}
+
+#apply:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+#filter {
+    padding-left: 10px;
+    height: 42px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #59a6d3;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 200px;
+ 
+}
+.quiz-container {
+    background-color: #fff; /* White background for content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 50%;
+    background-color: #f4f4f4; /* Light gray background */
+}
+#category{
+    color: #0056b3;
+}
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+span {
+    font-weight: bold;
+    color: #d9534f; /* Red color */
+    /* border: 1px solid blue; */
+}
+
+#Timer {
+    color: #28a745; /* Green for timer */
+    font-weight: bold;
+    /* border: 1px solid blue; */
+}
+#type{
+  
+  height: 40px;
+  width: 100px;
+  /* border: 1px solid blue; */
+  
+}
+#select{
+  height: 40px;
+  width: 150px;
+ 
+  /* border: 1px solid blue; */
+}
+#j{
+    font-weight: bold;
+   
+}
+
+
+/* Body styles */
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4CAF50, #2196F3); /* Gradient background */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+    
+}
+
+.navbar h1 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar button {
+ 
+   color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #6A5ACD;
+
+}
+
+.navbar button:hover {
+    background-color: #483D8B;
+    color: white;
+}
+
+.navbar a + a {
+    margin-left: 20px; /* Adds space between the buttons */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a + a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .navbar button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+.hidden {
+    display: none;
+}
+</style>
+<body>
+    <div class="navbar">
+       
+    <a href="home_page.html" ><button class="homepage">Home Page</button></a>
+</div>
+<h1>Update Quiz</h1>
+    <div id="quizTitle"></div>
+    <form id="forms" onsubmit="updateQuiz(event)" class="hidden">
+        <!-- <p>Quiz Name</p> -->
+      <div class="first">
+        <label id="a">Quiz Name</label>
+        <input type="text" id="option-7" required>
+    
+        <!-- <p>Timer (in minutes)</p> -->
+        <label id="b">Timer</label>
+        <input type="number" id="option-8" required>
+        <p  id="j" for="expense-amount">Quiz Level</p>
+        <select id="type">
+            <option value="Hard">Hard</option>
+           <option value="Medium">Medium</option>
+            <option value="Easy">Easy</option>
+        </select>
+        <div id="m">Choose Your Category</div>
+        <select  id="select">
+            <!-- <option value="" disabled selected>Choose an expense</option> -->
+    
+        </select>
+        <button id="update-btn" type="submit">Update</button>
+      </div>
+    </form>
+    
+
+    <form id="form" class="hidden">
+        <div class="inputs">
+         <div class="second">
+             <p id="question-text" for="expense-amount">Question</p>
+             <input type="text" id="option-6" name="expense-amount" required>
+            
+             <p  id="i" for="expense-amount">Weightage</p>
+             <input type="number" id="weightage" name="expense-amount" required>
+             
+
+             <!-- <select id="type">
+             
+                <option value="Hard">Hard</option>
+               <option value="Medium">Medium</option>
+                <option value="Easy">Easy</option>
+            </select> -->
+            </div>
+            <div class="third">
+            
+             <p id="d" for="expense-amount">Option 1</p>
+             <input type="text" id="option-1" name="expense-amount" required>
+     
+             
+             <p id="e" for="expense-amount">Option 2</p>
+             <input type="text" id="option-2"  name="expense-amount" required>
+     
+             <p  id="f" for="expense-amount">Option 3</p>
+             <input type="text" id="option-3" name="expense-amount" required>
+     
+             <p  id="g" for="expense-amount">Option 4</p>
+             <input type="text" id="option-4" name="expense-amount" required>
+     
+             <p  id="h" for="expense-amount">Correct Answer</p>
+             <input type="text" id="option-5" name="expense-amount" required>
+            </div>
+            <div class="fourth">
+             <button id="btn" onclick="updateQuestion()">Update</button>
+             <button id="btns" onclick="Added()">Add</button>
+
+             <!-- <button onclick="updateQuestion()">Update Question</button> -->
+ 
+         </div>
+        </div>
+        
+     </form>
+    <!-- <div class="filter">
+        <select id="filter">
+            <option id="all" value="All ">All</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+        <button id="apply" onclick="apply()">Filter</button>
+    </div> -->
+    <div id="questionContainer">
+        <div class="background">
+           
+        </div>
+    </div>
+</body>
+<script src="home_page.js">
+    
+</script>
+</html>

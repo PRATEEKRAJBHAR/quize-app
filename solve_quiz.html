@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<style>
+ body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 97%;
+    background-color: #f8f9fa;
+ }
+/* .container {
+    width: 100%; 
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+ 
+} */
+
+.options {
+    list-style-type: none;  
+    padding: 0; 
+}
+
+.options li {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+   
+}
+
+.options li:hover {
+    background-color: #f0f0f0;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+#previous-btn{
+  
+    height: 30px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 1s;
+    /* margin-top: 20px; */
+    /* margin-left: 20px; */
+    /* margin-right: 500px; */
+}
+#previous-btn:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+#next-btn{
+    
+    height: 30px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 1s;
+    /* margin-top: 20px; */
+    /* margin-left: 80px; */
+    /* margin-right: 500px; */
+}
+#next-btn:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+#submit{
+    
+    height: 30px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 1s;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 500px;
+    /* border: 1px solid blue; */
+    margin-left: 250px;
+position: relative;
+bottom: 50px;
+
+}
+#submit:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+
+a{
+    text-decoration: none;
+}
+#progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#progress-bar {
+    width: 0%; /* Initially 0 */
+    height: 100%;
+    background-color: #5074c9;
+    transition: width 0.3s ease-in-out;
+}
+
+#progress-text {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#cancle {
+    height: 30px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 1s;
+    /* border: 1px solid blue; */
+    margin-left: 1300px;
+position: relative;
+bottom: 30px;
+}
+
+#cancle:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+.container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: auto;
+    margin: 50px auto;
+}
+
+/* Quiz Title */
+#quiz_name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Timer Container */
+#timer-container {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fff3cd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+}
+
+/* Timer */
+#timer {
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 20px;
+}
+
+/* Category & Quiz Level */
+#weighatage, #category, #quiz-level {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    display: inline-block;
+}
+#question-text{
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: start;
+}
+</style>
+<body>
+    <div class="container">
+        <h2 id="quiz_name"></h2>
+        <div id="timer-container">
+            Time Left: <span id="timer">00:00</span> <!-- This will display the time left -->
+            <p id="weighatage">Weighatage</p>
+            <p id="category">Category</p>
+            <p id="quiz-level">Quiz Level</p>
+        </div>
+        
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="progress-text">Question 1 of X</p> <!-- Text to show question progress -->
+        
+       
+
+        <div class="Quetiion">
+            <h3 id="question-text">Question will be displayed here</h3>
+        </div>
+        <hr>
+        <div class="changes">
+            <ul class="options">
+                <li>
+                    <input type="radio" name="options" id="option1" value="">
+                    <label for="option1" id="option1-text"></label>
+                </li>
+                <li>
+                    <input type="radio" name="options" id="option2" value="">
+                    <label for="option2" id="option2-text"></label>
+                </li>
+                <li>
+                    <input type="radio" name="options" id="option3" value="">
+                    <label for="option3" id="option3-text"></label>
+                </li>
+                <li>
+                    <input type="radio" name="options" id="option4" value="">
+                    <label for="option4" id="option4-text"></label>
+                </li>
+            </ul>     
+        </div>
+        
+        <div class="buttons">
+            <button id="previous-btn">Previous</button>
+            <button id="next-btn">Next</button>
+            <a href="submit_quiz_page.html"><button id="submit" onclick="submitquiz()">Submit</button></a>
+        </div>
+        <div class="cancle">
+            <a href="home_page.html" ><button id="cancle"> Cancel</button></a>
+        </div>
+    </div>
+   
+    <!-- <script src="path/to/your/javascript-file.js"></script> -->
+</body>
+
+
+<script src="solve_quiz.js"></script>
+
+
+</html>

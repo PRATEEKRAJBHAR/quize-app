@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+</head>
+
+
+<style>
+    #create-quiz{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 45px;
+    width: 30%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+    margin-right: 10px;
+}
+#add-quiz{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 27px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 1s;
+    /* margin-right: 500px; */
+}
+#add-quiz:hover{
+    background-color: #8e978c;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+ /* form{
+    
+    display: flex;
+    justify-content: space-evenly;
+} */
+#quiz-name{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 30px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    /* width: 30%; */
+    /* border: 5px solid red; */
+}
+#option-1{
+    /* padding-left: 10px; Andar ka text 10px right hoga */
+    height: 45px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+   width: 30%;
+}
+#option-2{
+    padding-left: 10px; 
+    height: 45px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+   width: 30%;
+}
+
+#option-3{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 45px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+   width: 30%;
+}
+
+#option-4{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 45px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+   width: 30%;
+}
+
+#option-5{
+    padding-left: 10px; 
+    height: 45px;
+    width: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+   width: 30%;
+   /* margin-right: 50px; */
+   position: relative;
+   right: 60px;
+}
+#option-6{
+  
+    height: 45px;
+    width: 30%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-left: 5px;
+    
+}
+
+#option-7{
+   /* border: 13px solid red; */
+    height: 45px;
+    /* width: 25%; */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+ 
+ margin-right: 420px; 
+    
+}
+#option-8{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 45px;
+    /* width: 20%; */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    right: 380px;
+   
+  
+}
+#weightage{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 45px;
+    /* width: 50%; */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    right: 80px; 
+}
+
+#type{
+  /* border: 1px solid blue; */
+  height: px40;
+  width: 30%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-left: 5px;
+  position: relative;
+  right: 310px;
+  
+}
+#btn{
+    padding-left: 10px; /* Andar ka text 10px right hoga */
+    height: 45px;
+    width: 130px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    transition: 1s;
+    /* margin-right: 500px; */
+}
+#btn:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+#save-btn {
+    /* padding-left: 10px; */
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+#save-btn:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#update-btn {
+    /* padding-left: 10px; */
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 40px;
+}
+
+#update-btn:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#btns {
+    /* padding-left: 10px; */
+    height: 42px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 70px;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#btns:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+
+
+.container { 
+    border: 1px solid blueviolet;
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #ccc;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    word-wrap: break-word;   /* Ensures words wrap */
+    white-space: normal;     /* Allows text to wrap */
+    overflow-wrap: break-word; /* Helps break long words */
+    max-width: 200px; /* Adjust as needed to control cell width */
+}
+
+th {
+    background-color: #dde2e1;
+}
+.first{
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+padding-top: 40px;
+margin-top: 30px;
+margin-bottom: 30px;
+padding-bottom: 30px;
+display: flex;
+justify-content: space-around;
+}
+
+
+#j{
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 40px;
+    right: 165px;
+    font-weight: bold;
+    width: 40%;
+   
+}
+
+
+#a{
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 40px;
+    left:180px;
+    font-weight: bold;
+    width: 40%;
+   
+}
+#b{
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 40px;
+    right: 275px;
+    font-weight: bold;
+
+}
+.inputs{
+    /* border: 1px solid red; */
+    background-color: #ccc;
+
+}
+.second{
+    /* background-color: #eac8c8; */
+    display: flex;
+padding-top: 40px;
+/* margin-top: 30px; */
+margin-bottom: 30px;
+/* margin-left: 50px; */
+/* margin-top: 50px; */
+padding-bottom: 20px;
+
+}
+#c{
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 40px;
+    left: 65px;
+    font-weight: bold;
+
+}
+.third{
+    display: flex;
+margin-top: 30px;
+margin-bottom: 30px;
+}
+.fourth{
+    /* border: 1px solid red; */
+    padding-bottom: 10px;
+    margin-left: 30px;
+    position: relative;
+    bottom: 20px;
+   
+}
+#d{
+    /* border: 1px solid red; */
+    width: 10%;
+    height: 20px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+    font-weight: bold;
+
+}
+#e{
+    /* border: 1px solid red; */
+    width: 10%;
+    height: 20px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+    font-weight: bold;
+
+}
+#f{
+    /* border: 1px solid red; */
+    width: 10%;
+    height: 20px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+    font-weight: bold;
+
+}
+#g{
+    /* border: 1px solid red; */
+    width: 10%;
+    height: 20px;
+    position: relative;
+    bottom: 40px;
+    left: 70px;
+    font-weight: bold;
+
+}
+#h{
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 20px;
+    position: relative;
+    bottom: 40px;
+    left: 78px;
+    font-weight: bold;
+
+}
+#i{
+    /* border: 1px solid red; */
+    width: 20%;
+    height: 20px;
+    position: relative;
+    bottom: 40px;
+    left: 220px;
+    font-weight: bold;
+
+}
+/* #m{
+    border: 1px solid red;
+    width: 40%;
+    height: 30px;
+    position: relative;
+    bottom: 10px;
+    right: 40px;
+    bottom: 40px;
+    font-weight: bold;
+
+} */
+#m{
+    /* border: 1px solid red; */
+    position: relative;
+    bottom: 40px;
+    right: 60px;
+    font-weight: bold;
+    width: 40%;
+   
+}
+#questionContainer{
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    /* padding-left: 80px; */
+    
+}
+
+.background{
+    /* border: 1px solid blue; */
+    margin-left: 80px;
+    
+}
+.icons{
+    background-color: #efe0e0;
+    height:40px;
+    font-size: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100px;
+   flex-direction: row;
+   /* margin-bottom: 10px; */
+}
+.fa-trash{
+display: flex;
+
+}
+.fa-pen-to-square{
+
+margin-left: 20px;
+}
+#currectanswer{
+   
+    background-color: #e6e3e3;
+  display: flex;
+  justify-content: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+#ans{
+    margin-left: 20px;
+}
+#weightages{
+   
+   background-color: #e6e3e3;
+ display: flex;
+ justify-content: start;
+ margin-top: 20px;
+ margin-bottom: 20px;
+ 
+}
+#weight{
+   margin-left: 20px;
+}
+#types{
+   
+   background-color: #e6e3e3;
+ display: flex;
+ justify-content: start;
+ margin-top: 20px;
+ margin-bottom: 20px;
+ 
+}
+#typess{
+   margin-left: 20px;
+}
+#home {
+    /* padding-left: 10px; */
+    height: 42px;
+    width: 220px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#home:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+#category {
+    /* padding-left: 10px; */
+    height: 42px;
+    width: 220px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #6A5ACD;
+    color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+#category:hover {
+    background-color: #483D8B;
+ 
+    cursor: pointer;
+    transform: scale(1.05);
+}
+h1{
+    margin-left: 65px;
+    color: #4A47A3;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#options {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+        }
+
+        #options li {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            margin: 5px 0;
+           
+        }
+
+        #options li::before {
+            content: counter(option, lower-alpha) ".) " ; 
+            counter-increment: option;
+            font-weight: bold;
+        }
+
+        #options {
+            counter-reset: option; /* Reset counter for list */
+            
+        }
+        .delete-icon{
+            /* border: 1px solid red; */
+            position: relative;
+            bottom: 18px;
+            left: 30px;
+        }
+        /* ul {
+
+    list-style-type: lower-roman; 
+} */
+
+ul {
+    list-style-type: none; /* Remove bullets */
+    counter-reset: roman-counter;
+    padding-left: 0;
+}
+
+ul li {
+    counter-increment: roman-counter;
+    position: relative;
+    padding-left: 30px; /* Space for numbering */
+}
+
+ul li::before {
+    content: counter(roman-counter, lower-roman) ".) ";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+.bgc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+}
+.inputs{
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Hover & Focus Effects */
+.inputs:hover {
+    background-color: #f1f1f1;
+}
+
+.inputs:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+#select{
+  /* border: 1px solid blue; */
+  height: 45px;
+  width: 30%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  /* margin-left: 5px; */
+  position: relative;
+  right: 200px;
+  
+}
+.zero{
+    margin-left: 6 0px;
+    margin-top: 70px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 60px; /* Space for the fixed navbar */
+}
+
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #4CAF50, #2196F3); /* Gradient background */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+.navbar h1 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar button {
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.navbar a + a {
+    margin-left: 20px; /* Adds space between the buttons */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a + a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .navbar button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+</style>
+
+<body>
+     <div class="navbar">
+        
+<a href="home_page.html"><button id="home">Goto Home Page</button></a>
+<a href="category.html"><button id="category">Category Page</button></a>
+
+     </div>
+     <h1>Quiz App</h1>
+<div class="zero">
+    
+</div>
+      <div class="first">
+        <p id="a" for="expense-amount">Quiz Name</p>
+        <input type="text" id="option-7" name="expense-amount" required>
+
+        <p id="b" for="expense-amount">Time(Minutes)</p>
+        <input type="number" id="option-8" name="expense-amount" required>
+        <p  id="j" for="expense-amount">Quiz Level</p>
+            <select id="type">
+                <option value="Hard">Hard</option>
+               <option value="Medium">Medium</option>
+                <option value="Easy">Easy</option>
+            </select>
+            <div id="m">Category</div>
+            <select  id="select">
+                <!-- <option value="" disabled selected>Choose an expense</option> -->
+        
+            </select>
+      </div>
+
+       <div class="inputs">
+        <div class="second">
+            <p id="c" for="expense-amount">Question</p>
+            <input type="text" id="option-6" name="expense-amount" required>
+            <p  id="i" for="expense-amount">Weightage</p>
+            <input type="number" id="weightage" name="expense-amount" required>
+            
+        </div>
+           <div class="third">
+            <p id="d" for="expense-amount">Option 1</p>
+            <input type="text" id="option-1" name="expense-amount" required>
+    
+            
+            <p id="e" for="expense-amount">Option 2</p>
+            <input type="text" id="option-2"  name="expense-amount" required>
+    
+            <p  id="f" for="expense-amount">Option 3</p>
+            <input type="text" id="option-3" name="expense-amount" required>
+    
+            <p  id="g" for="expense-amount">Option 4</p>
+            <input type="text" id="option-4" name="expense-amount" required>
+    
+            <p  id="h" for="expense-amount">Correct Answer</p>
+            <input type="text" id="option-5" name="expense-amount" required>
+
+           
+           </div>
+           <div class="fourth">
+            <button id="save-btn">Add</button>
+            <button id="update-btn">Update</button>
+           </div>
+       </div>
+        <button  id="btns" onclick="adminshowing_data()">Save </button>
+    </form>
+    <div id="quizcontainer">
+       
+    </div>
+           <div id="questionContainer">
+              <div class="background">
+                
+            </div>
+    </div>
+</body>
+<script src="create_quiz.js"></script>
+</html>
+
+
